@@ -34,28 +34,6 @@ def count(pool, prefix=[], majdiag=[], mindiag=[]):
                 x += count(rest, prefix + [num], majdiag+[len(prefix)+1-num], mindiag+[len(prefix)+1+num])
     return x
           
-def setup(given):
-    reject = {}
-    #find diagonals of given queens
-    for k,v in given.items():
-        cnt = 1
-        for i in range(k-1,0,-1):
-            reject[i] = reject.get(i, []) + [v-cnt,v+cnt]
-            cnt += 1
-        cnt = 1
-        for i in range(k+1,15):
-            reject[i] = reject.get(i, []) + [v-cnt,v+cnt]
-            cnt += 1
-    existing = [v for k,v in given.items()]
-    #compile cols and diagonals due to given queens
-    for k,v in reject.items():
-        v += existing
-    for k,v in reject.items():
-        if v:
-            reject[k] = [i for i in set(v) if 0<i<(14+1)]
-    return reject
-
-
 num_case = int(sys.stdin.readline())
 for _ in range(num_case):
     s = sys.stdin.readline().split()
