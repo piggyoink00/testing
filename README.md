@@ -17,6 +17,6 @@ When the exponent k is even, we would just need to calculate <img src="https://r
 
 ## Time Complexity
 
-Whenever the exponent is odd, the next call of the recursive function would be an even exponent due to the step to deduct 1 from an odd exponent. As such, there would be an even exponent value for at least one out of every two recursions. When the exponent value is even, the exponent will be halved by this algorithm. So for a given exponent to reach a value of 1, it would take at most 2*(<img src="https://render.githubusercontent.com/render/math?math=log_2 k">l) steps. Thus, the time complexity of this algorithm would be O(log(k)).
+Whenever the exponent is odd, the next call of the recursive function would be an even exponent due to the step to deduct 1 from an odd exponent. As such, there would be an even exponent value for at least one out of every two recursions. When the exponent value is even, the exponent will be halved by this algorithm. So for a given exponent to reach a value of 1, it would take at most 2*(<img src="https://render.githubusercontent.com/render/math?math=log_2 k">) steps. Thus, the time complexity of this algorithm would be O(log(k)).
 
 
